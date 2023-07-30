@@ -1,0 +1,12 @@
+while not game:GetService("Players").LocalPlayer do
+   task.wait() 
+end
+while task.wait() do
+    for i, v in pairs(game.Players:GetDescendants()) do
+        if v.Name == "LocalSoundFolder" then
+            if v.Parent.Name ~= ""..game.Players.LocalPlayer.Name.."" then
+                v:Destroy()
+            end
+        end
+    end
+end
