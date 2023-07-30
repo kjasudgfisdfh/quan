@@ -1,0 +1,314 @@
+for i, v in pairs(game.CoreGui:GetChildren()) do
+    if v.Name == "MultiChecker" then
+        v:Destroy()
+    end
+end
+
+local MultiChecker = {
+    MultiCheckerGui = Instance.new("ScreenGui"),
+    MainFrame = Instance.new("TextButton"),
+    MainFrameCorner = Instance.new("UICorner"),
+    PlayerNameFrame = Instance.new("Frame"),
+    PlayerNameFrameCorner = Instance.new("UICorner"),
+    PlayerTextBox = Instance.new("TextBox"),
+    PlayerTextBoxConstraint = Instance.new("UITextSizeConstraint"),
+    FsFrame = Instance.new("Frame"),
+    FsFrameText = Instance.new("TextLabel"),
+    FsFrameCorner = Instance.new("UICorner"),
+    BtFrame = Instance.new("Frame"),
+    BtFrameText = Instance.new("TextLabel"),
+    BtFrameCorner = Instance.new("UICorner"),
+    PpFrame = Instance.new("Frame"),
+    PpFrameText = Instance.new("TextLabel"),
+    PpFrameCorner = Instance.new("UICorner"),
+    MsFrame = Instance.new("Frame"),
+    MsFrameText = Instance.new("TextLabel"),
+    MsFrameCorner = Instance.new("UICorner"),
+    JfFrame = Instance.new("Frame"),
+    JfFrameText = Instance.new("TextLabel"),
+    JfFrameCorner = Instance.new("UICorner"),
+    TokensFrame = Instance.new("Frame"),
+    TokensFrameText = Instance.new("TextLabel"),
+    TokensFrameCorner = Instance.new("UICorner"),
+    CloseButton = Instance.new("TextButton")
+}
+
+MultiChecker.MultiCheckerGui.Name = "MultiChecker"
+MultiChecker.MultiCheckerGui.Parent = game.CoreGui
+MultiChecker.MultiCheckerGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+MultiChecker.MultiCheckerGui.ResetOnSpawn = false
+
+MultiChecker.MainFrame.Name = "MainFrame"
+MultiChecker.MainFrame.Parent = MultiChecker.MultiCheckerGui
+MultiChecker.MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MultiChecker.MainFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+MultiChecker.MainFrame.BackgroundTransparency = 0.1
+MultiChecker.MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+MultiChecker.MainFrame.Size = UDim2.new(0.25, 0, 0.28, 0)
+MultiChecker.MainFrame.Active = false
+MultiChecker.MainFrame.Text = ""
+MultiChecker.MainFrame.AutoButtonColor = false
+
+MultiChecker.MainFrameCorner.CornerRadius = UDim.new(0, 10)
+MultiChecker.MainFrameCorner.Name = "MainFrameCorner"
+MultiChecker.MainFrameCorner.Parent = MultiChecker.MainFrame
+
+MultiChecker.PlayerNameFrame.Name = "PlayerNameFrame"
+MultiChecker.PlayerNameFrame.Parent = MultiChecker.MainFrame
+MultiChecker.PlayerNameFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MultiChecker.PlayerNameFrame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+MultiChecker.PlayerNameFrame.BackgroundTransparency = 0.5
+MultiChecker.PlayerNameFrame.Position = UDim2.new(0.5, 0, 0.15, 0)
+MultiChecker.PlayerNameFrame.Size = UDim2.new(0.6, 0, 0.15, 0)
+
+MultiChecker.PlayerNameFrameCorner.CornerRadius = UDim.new(0, 10)
+MultiChecker.PlayerNameFrameCorner.Name = "PlayerNameFrameCorner"
+MultiChecker.PlayerNameFrameCorner.Parent = MultiChecker.PlayerNameFrame
+
+MultiChecker.PlayerTextBox.Name = "PlayerTextBox"
+MultiChecker.PlayerTextBox.Parent = MultiChecker.PlayerNameFrame
+MultiChecker.PlayerTextBox.AnchorPoint = Vector2.new(1, 0.5)
+MultiChecker.PlayerTextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MultiChecker.PlayerTextBox.BackgroundTransparency = 1.000
+MultiChecker.PlayerTextBox.Position = UDim2.new(1, 0, 0.5, 0)
+MultiChecker.PlayerTextBox.Size = UDim2.new(1, 0, 1, 0)
+MultiChecker.PlayerTextBox.Font = Enum.Font.GothamBlack
+MultiChecker.PlayerTextBox.PlaceholderText = "Enter Username Here"
+MultiChecker.PlayerTextBox.Text = ""
+MultiChecker.PlayerTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+MultiChecker.PlayerTextBox.TextScaled = true
+MultiChecker.PlayerTextBox.TextSize = 14.000
+MultiChecker.PlayerTextBox.TextWrapped = true
+MultiChecker.PlayerTextBox.ClearTextOnFocus = true
+
+MultiChecker.PlayerTextBoxConstraint.Parent = MultiChecker.PlayerTextBox
+MultiChecker.PlayerTextBoxConstraint.MaxTextSize = 20
+
+MultiChecker.FsFrame.Name = "FsMulti"
+MultiChecker.FsFrame.Parent = MultiChecker.MainFrame
+MultiChecker.FsFrame.AnchorPoint = Vector2.new(1, 0.5)
+MultiChecker.FsFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MultiChecker.FsFrame.BackgroundTransparency = 0.69
+MultiChecker.FsFrame.BorderSizePixel = 1
+MultiChecker.FsFrame.Position = UDim2.new(0.49, 0, 0.4, 0)
+MultiChecker.FsFrame.Size = UDim2.new(0.46, 0, 0.21, 0)
+
+MultiChecker.FsFrameText.Name = "FsMultiText"
+MultiChecker.FsFrameText.Parent = MultiChecker.FsFrame
+MultiChecker.FsFrameText.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+MultiChecker.FsFrameText.BackgroundTransparency = 1
+MultiChecker.FsFrameText.TextTransparency = 0
+MultiChecker.FsFrameText.Position = UDim2.new(0, 0, 0.28, 0)
+MultiChecker.FsFrameText.Size = UDim2.new(1, 0, 0.48, 0)
+MultiChecker.FsFrameText.Font = Enum.Font.GothamBold
+MultiChecker.FsFrameText.Text = ""
+MultiChecker.FsFrameText.TextScaled = true
+MultiChecker.FsFrameText.TextColor3 = Color3.fromRGB(233, 233, 233)
+MultiChecker.FsFrameText.TextSize = 25.000
+MultiChecker.FsFrameText.TextXAlignment = Enum.TextXAlignment.Center
+
+MultiChecker.FsFrameCorner.CornerRadius = UDim.new(0, 10)
+MultiChecker.FsFrameCorner.Name = "FsFrameCorner"
+MultiChecker.FsFrameCorner.Parent = MultiChecker.FsFrame
+
+MultiChecker.BtFrame.Name = "BtMulti"
+MultiChecker.BtFrame.Parent = MultiChecker.MainFrame
+MultiChecker.BtFrame.AnchorPoint = Vector2.new(1, 0.5)
+MultiChecker.BtFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MultiChecker.BtFrame.BackgroundTransparency = 0.69
+MultiChecker.BtFrame.BorderSizePixel = 1
+MultiChecker.BtFrame.Position = UDim2.new(0.49, 0, 0.63, 0)
+MultiChecker.BtFrame.Size = UDim2.new(0.46, 0, 0.21, 0)
+
+MultiChecker.BtFrameText.Name = "BtMultiText"
+MultiChecker.BtFrameText.Parent = MultiChecker.BtFrame
+MultiChecker.BtFrameText.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+MultiChecker.BtFrameText.BackgroundTransparency = 1
+MultiChecker.BtFrameText.TextTransparency = 0
+MultiChecker.BtFrameText.Position = UDim2.new(0, 0, 0.28, 0)
+MultiChecker.BtFrameText.Size = UDim2.new(1, 0, 0.48, 0)
+MultiChecker.BtFrameText.Font = Enum.Font.GothamBold
+MultiChecker.BtFrameText.Text = ""
+MultiChecker.BtFrameText.TextScaled = true
+MultiChecker.BtFrameText.TextColor3 = Color3.fromRGB(233, 233, 233)
+MultiChecker.BtFrameText.TextSize = 25.000
+MultiChecker.BtFrameText.TextXAlignment = Enum.TextXAlignment.Center
+
+MultiChecker.BtFrameCorner.CornerRadius = UDim.new(0, 10)
+MultiChecker.BtFrameCorner.Name = "BtFrameCorner"
+MultiChecker.BtFrameCorner.Parent = MultiChecker.BtFrame
+
+MultiChecker.PpFrame.Name = "PpMulti"
+MultiChecker.PpFrame.Parent = MultiChecker.MainFrame
+MultiChecker.PpFrame.AnchorPoint = Vector2.new(1, 0.5)
+MultiChecker.PpFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MultiChecker.PpFrame.BackgroundTransparency = 0.69
+MultiChecker.PpFrame.BorderSizePixel = 1
+MultiChecker.PpFrame.Position = UDim2.new(0.49, 0, 0.858, 0)
+MultiChecker.PpFrame.Size = UDim2.new(0.46, 0, 0.21, 0)
+
+MultiChecker.PpFrameText.Name = "PpMultiText"
+MultiChecker.PpFrameText.Parent = MultiChecker.PpFrame
+MultiChecker.PpFrameText.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+MultiChecker.PpFrameText.BackgroundTransparency = 1
+MultiChecker.PpFrameText.TextTransparency = 0
+MultiChecker.PpFrameText.Position = UDim2.new(0, 0, 0.28, 0)
+MultiChecker.PpFrameText.Size = UDim2.new(1, 0, 0.48, 0)
+MultiChecker.PpFrameText.Font = Enum.Font.GothamBold
+MultiChecker.PpFrameText.Text = ""
+MultiChecker.PpFrameText.TextScaled = true
+MultiChecker.PpFrameText.TextColor3 = Color3.fromRGB(233, 233, 233)
+MultiChecker.PpFrameText.TextSize = 25.000
+MultiChecker.PpFrameText.TextXAlignment = Enum.TextXAlignment.Center
+
+MultiChecker.PpFrameCorner.CornerRadius = UDim.new(0, 10)
+MultiChecker.PpFrameCorner.Name = "PpFrameCorner"
+MultiChecker.PpFrameCorner.Parent = MultiChecker.PpFrame
+
+MultiChecker.MsFrame.Name = "MsMulti"
+MultiChecker.MsFrame.Parent = MultiChecker.MainFrame
+MultiChecker.MsFrame.AnchorPoint = Vector2.new(1, 0.5)
+MultiChecker.MsFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MultiChecker.MsFrame.BackgroundTransparency = 0.69
+MultiChecker.MsFrame.BorderSizePixel = 1
+MultiChecker.MsFrame.Position = UDim2.new(0.97, 0, 0.4, 0)
+MultiChecker.MsFrame.Size = UDim2.new(0.46, 0, 0.21, 0)
+
+MultiChecker.MsFrameText.Name = "MsMultiText"
+MultiChecker.MsFrameText.Parent = MultiChecker.MsFrame
+MultiChecker.MsFrameText.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+MultiChecker.MsFrameText.BackgroundTransparency = 1
+MultiChecker.MsFrameText.TextTransparency = 0
+MultiChecker.MsFrameText.Position = UDim2.new(0, 0, 0.28, 0)
+MultiChecker.MsFrameText.Size = UDim2.new(1, 0, 0.48, 0)
+MultiChecker.MsFrameText.Font = Enum.Font.GothamBold
+MultiChecker.MsFrameText.Text = ""
+MultiChecker.MsFrameText.TextScaled = true
+MultiChecker.MsFrameText.TextColor3 = Color3.fromRGB(233, 233, 233)
+MultiChecker.MsFrameText.TextSize = 25.000
+MultiChecker.MsFrameText.TextXAlignment = Enum.TextXAlignment.Center
+
+MultiChecker.MsFrameCorner.CornerRadius = UDim.new(0, 10)
+MultiChecker.MsFrameCorner.Name = "MsFrameCorner"
+MultiChecker.MsFrameCorner.Parent = MultiChecker.MsFrame
+
+MultiChecker.JfFrame.Name = "JfMulti"
+MultiChecker.JfFrame.Parent = MultiChecker.MainFrame
+MultiChecker.JfFrame.AnchorPoint = Vector2.new(1, 0.5)
+MultiChecker.JfFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MultiChecker.JfFrame.BackgroundTransparency = 0.69
+MultiChecker.JfFrame.BorderSizePixel = 1
+MultiChecker.JfFrame.Position = UDim2.new(0.97, 0, 0.63, 0)
+MultiChecker.JfFrame.Size = UDim2.new(0.46, 0, 0.21, 0)
+
+MultiChecker.JfFrameText.Name = "JfMultiText"
+MultiChecker.JfFrameText.Parent = MultiChecker.JfFrame
+MultiChecker.JfFrameText.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+MultiChecker.JfFrameText.BackgroundTransparency = 1
+MultiChecker.JfFrameText.TextTransparency = 0
+MultiChecker.JfFrameText.Position = UDim2.new(0, 0, 0.28, 0)
+MultiChecker.JfFrameText.Size = UDim2.new(1, 0, 0.48, 0)
+MultiChecker.JfFrameText.Font = Enum.Font.GothamBold
+MultiChecker.JfFrameText.Text = ""
+MultiChecker.JfFrameText.TextScaled = true
+MultiChecker.JfFrameText.TextColor3 = Color3.fromRGB(233, 233, 233)
+MultiChecker.JfFrameText.TextSize = 25.000
+MultiChecker.JfFrameText.TextXAlignment = Enum.TextXAlignment.Center
+
+MultiChecker.JfFrameCorner.CornerRadius = UDim.new(0, 10)
+MultiChecker.JfFrameCorner.Name = "JfFrameCorner"
+MultiChecker.JfFrameCorner.Parent = MultiChecker.JfFrame
+
+MultiChecker.TokensFrame.Name = "Tokens"
+MultiChecker.TokensFrame.Parent = MultiChecker.MainFrame
+MultiChecker.TokensFrame.AnchorPoint = Vector2.new(1, 0.5)
+MultiChecker.TokensFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MultiChecker.TokensFrame.BackgroundTransparency = 0.69
+MultiChecker.TokensFrame.BorderSizePixel = 1
+MultiChecker.TokensFrame.Position = UDim2.new(0.97, 0, 0.858, 0)
+MultiChecker.TokensFrame.Size = UDim2.new(0.46, 0, 0.21, 0)
+
+MultiChecker.TokensFrameText.Name = "TokensMultiText"
+MultiChecker.TokensFrameText.Parent = MultiChecker.TokensFrame
+MultiChecker.TokensFrameText.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+MultiChecker.TokensFrameText.BackgroundTransparency = 1
+MultiChecker.TokensFrameText.TextTransparency = 0
+MultiChecker.TokensFrameText.Position = UDim2.new(0, 0, 0.28, 0)
+MultiChecker.TokensFrameText.Size = UDim2.new(1, 0, 0.48, 0)
+MultiChecker.TokensFrameText.Font = Enum.Font.GothamBold
+MultiChecker.TokensFrameText.Text = ""
+MultiChecker.TokensFrameText.TextScaled = true
+MultiChecker.TokensFrameText.TextColor3 = Color3.fromRGB(233, 233, 233)
+MultiChecker.TokensFrameText.TextSize = 25.000
+MultiChecker.TokensFrameText.TextXAlignment = Enum.TextXAlignment.Center
+
+MultiChecker.TokensFrameCorner.CornerRadius = UDim.new(0, 10)
+MultiChecker.TokensFrameCorner.Name = "TokensFrameCorner"
+MultiChecker.TokensFrameCorner.Parent = MultiChecker.TokensFrame
+
+MultiChecker.CloseButton.Name = "CloseButton"
+MultiChecker.CloseButton.Parent = MultiChecker.MainFrame
+MultiChecker.CloseButton.AnchorPoint = Vector2.new(0.5, 0.5)
+MultiChecker.CloseButton.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+MultiChecker.CloseButton.BackgroundTransparency = 1
+MultiChecker.CloseButton.Position = UDim2.new(0.95, 0, 0.08, 0)
+MultiChecker.CloseButton.Size = UDim2.new(0.1, 0, 0.15, 0)
+MultiChecker.CloseButton.Active = false
+MultiChecker.CloseButton.Text = "X"
+MultiChecker.CloseButton.TextColor3 = Color3.fromRGB(100, 100, 100)
+MultiChecker.CloseButton.TextSize = 24
+MultiChecker.CloseButton.Font = Enum.Font.GothamBlack
+MultiChecker.CloseButton.AutoButtonColor = false
+
+local convert = {
+    ['number'] = function(st)
+        local suffixes = {"K", "M", "B", "T", "Qa"}
+        for i = #suffixes, 1, -1 do
+            local mp = math.pow(10, i * 3)
+            if st >= mp then
+                return ("%.1f"):format(st / mp) .. suffixes[i]
+            end
+        end
+        return tostring(st)
+    end
+}
+
+MultiChecker.PlayerTextBox.FocusLost:connect(function()
+    pcall(function()
+        for i,v in pairs(game.Players:GetChildren()) do
+            if(string.sub(string.lower(v.Name),1,string.len(MultiChecker.PlayerTextBox.Text))) == string.lower(MultiChecker.PlayerTextBox.Text) then
+                MultiChecker.PlayerTextBox.Text = v.Name
+                local Multiplier = game:GetService("HttpService"):JSONDecode(game:GetService("Players")[MultiChecker.PlayerTextBox.Text].PrivateStats.Inventory.Value)
+                MultiChecker.FsFrameText.Text = "Fist: x"..tostring(Multiplier.FSMultiplier)..""
+                MultiChecker.BtFrameText.Text = "Body: x"..tostring(Multiplier.BTMultiplier)..""
+                MultiChecker.PpFrameText.Text = "Psychic: x"..tostring(Multiplier.PPMultiplier)..""
+                MultiChecker.MsFrameText.Text = "Movement: x"..tostring(Multiplier.MSMultiplier)..""
+                MultiChecker.JfFrameText.Text = "Jump: x"..tostring(Multiplier.JFMultiplier)..""
+                MultiChecker.TokensFrameText.Text = "Tokens: "..convert.number(game.Players[MultiChecker.PlayerTextBox.Text].PrivateStats.Token.Value)
+            end
+        end
+    end)
+end)
+
+local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
+
+MultiChecker.MainFrame.MouseButton1Down:Connect(function()
+    local Mx, My = Mouse.X, Mouse.Y
+    local MouseMove, MouseKill
+    MouseMove = Mouse.Move:Connect(function()
+        local nMx, nMy = Mouse.X, Mouse.Y
+        local Dx, Dy = nMx - Mx, nMy - My
+        MultiChecker.MainFrame.Position = MultiChecker.MainFrame.Position + UDim2.fromOffset(Dx, Dy)
+        Mx, My = nMx, nMy
+    end)
+    MouseKill = game:GetService("UserInputService").InputEnded:Connect(function(UserInput)
+        if UserInput.UserInputType == Enum.UserInputType.MouseButton1 then
+            MouseMove:Disconnect()
+            MouseKill:Disconnect()
+        end
+    end)
+end)
+
+MultiChecker.CloseButton.MouseButton1Click:connect(function()
+    MultiChecker.MainFrame:Destroy()
+end)
