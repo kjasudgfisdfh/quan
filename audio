@@ -1,6 +1,5 @@
-while not game:GetService("Players").LocalPlayer do
-   task.wait() 
-end
+repeat task.wait() until game:IsLoaded()
+
 while task.wait() do
     for i, v in pairs(game.Players:GetDescendants()) do
         if v.Name == "LocalSoundFolder" then
